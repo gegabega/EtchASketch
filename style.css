@@ -13,8 +13,52 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-size: 62.5%;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   display: flex;
   justify-content: center;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.main {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: max-content;
+  width: 1000px;
+}
+
+.main__buttons {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.main__buttons p {
+  font-size: 1.3rem;
+}
+
+.main__inputs {
+  padding: 2em;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin-bottom: 4em;
+
+  /* GLASSMORPH
+  background: rgba(222, 255, 232, 0.29);
+  border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  border: 1px solid rgba(222, 255, 232, 0.63); */
 }
 
 .container {
@@ -26,14 +70,18 @@ body {
   grid-template-rows: var(--rows);
   grid-template-columns: var(--columns);
   min-width: max-content;
-  /* height: 960px;
-  width: 960px; */
-  height: 100dvh;
-  width: 100dvw;
-
-  border: solid 1px red;
+  height: 720px;
+  width: 720px;
   font-size: 0;
   position: relative;
+
+  /* IF WE WANT IT FULLY RESPONSIVE (CHANGE CREATEGRID FUNCTION IN JS TO REFLECT)
+  height: 100dvh;
+  width: 100dvw; */
+
+  /* --- OUTLINE INSTEAD OF BORDER SO DOWNLOAD DOESN'T INCLUDE BORDER --- */
+  /* border: solid 2px black; */
+  outline: solid 2px black;
 }
 
 .grid {
@@ -42,8 +90,93 @@ body {
   margin: 0;
   padding: 0;
   border: none;
-  outline: 0.5px solid #000;
+  /* border: 0.03rem solid #ddd; */
+  border: 0.03rem solid black;
+  /* outline: none; */
   display: inline-block;
+
+  /* TODO: ADD BRUSH STYLE WITH INSET BOX SHADOW ON EACH BLOCK, SETTINGS CALCULATED BY BLOCK SIZE
+  box-shadow: 1px 1px 2px 1px whitesmoke inset; */
+}
+
+.btn {
+  color: black;
+  margin: 2rem;
+  padding: 1rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  border-radius: 0.5em;
+  outline: none;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.25s;
+}
+
+/* .btn:hover {
+  color: whitesmoke;
+  background-color: #ddd;
+} */
+
+.btn--download {
+  height: 60px;
+  width: 100px;
+  text-decoration: none;
+}
+
+.active {
+  color: whitesmoke;
+  background-color: black;
+}
+
+i {
+  width: 20px;
+  height: 20px;
+}
+
+a {
+  font-size: 1.3rem;
+}
+
+input {
+  height: 2.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  /* padding: 3px 5px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  text-align: start;
+}
+
+#input--generate {
+  width: 3em;
+  border: 1px black solid;
+  outline: none;
+}
+
+#input--gridcolor,
+#input--hover,
+#input--click {
+  width: 7em;
+}
+
+label {
+  font-size: 1.3rem;
+  padding-right: 2.5em;
+  padding-left: 1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.canvas-storage {
+  display: none;
 }
 
 /* 

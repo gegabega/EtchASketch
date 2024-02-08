@@ -4,13 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-    <title>Documents</title>
+    <script src="/js/html2canvas.min.js"></script>
+    <title>Draw+Download</title>
   </head>
   <body>
-    <!-- <button class="btn">Generate Grid</button> -->
+    <div class="main">
+      <div class="main__buttons">
+        <button class="btn btn--grid-toggle active">GRID OFF</button>
+        <!-- <button class="btn btn--draw-mode">DRAW MODE (CLICK&HOLD/HOVER)</button> -->
+        <!-- <button class="btn btn--download">DOWNLOAD (as png)</button> -->
+        <a class="btn btn--download"
+          ><i class="fa-solid fa-circle-down" style="font-size: 1.5rem"></i
+          >DOWNLOAD (as .png)</a
+        >
+        <p>(Please refresh after every download)</p>
+      </div>
 
-    <div class="container"></div>
-    <script src="script.js"></script>
+      <div class="main__inputs">
+        <input
+          id="input--generate"
+          placeholder="(max 100)"
+          class="main__inputs--generate"
+          type="number"
+          value="32"
+          max="100"
+        />
+        <label for="input--generate">Adjust <br />Canvas size</label>
+
+        <input
+          id="input--hover"
+          class="main__inputs--color--hover"
+          type="color"
+          type="color"
+          value="#bdff9f"
+          list="draw-presets"
+        />
+        <label for="input--hover"
+          >COLOR <br />
+          (HOVER)</label
+        >
+
+        <input
+          id="input--click"
+          class="main__inputs--color--click"
+          type="color"
+          value="#d3f5f5"
+          list="draw-presets"
+        />
+
+        <label for="input--click"
+          >COLOR <br />
+          (CLICK&HOLD)</label
+        >
+
+        <input
+          id="input--gridcolor"
+          class="main__inputs--color--click"
+          type="color"
+          value="#FFFFFF"
+          list="grid-presets"
+        />
+        <datalist id="draw-presets">
+          <option value="#EA80EB"></option>
+          <option value="#ff93ec"></option>
+          <option value="#90EF90"></option>
+          <option value="#bdff9f"></option>
+
+          <option value="#FFB54B"></option>
+          <option value="#a387ff"></option>
+          <option value="#d1b9ff"></option>
+          <option value="#82BDF4"></option>
+          <option value="#d3f5f5"></option>
+          <option value="#FF6961"></option>
+        </datalist>
+
+        <datalist id="grid-presets">
+          <option value="#FFFFFF"></option>
+          <option value="#F5F5F5"></option>
+          <option value="#D9D1C6"></option>
+          <option value="#000000"></option>
+        </datalist>
+
+        <label for="input--gridcolor">CANVAS <br />RESET</label>
+      </div>
+
+      <div class="main__grid">
+        <div class="container"></div>
+      </div>
+    </div>
+
+    <div class="canvas-storage"></div>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>
