@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --rows: repeat(10, 20px);
+  --columns: repeat(10, 20px);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; */
+  padding: 0;
+  display: grid;
+  grid-template-rows: var(--rows);
+  grid-template-columns: var(--columns);
+  min-width: max-content;
+  /* height: 960px;
+  width: 960px; */
+  height: 100dvh;
+  width: 100dvw;
+
+  border: solid 1px red;
+  font-size: 0;
+  position: relative;
+}
+
+.grid {
+  background-color: whitesmoke;
+  /* background-color: #f4ebd0; */
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0.5px solid #000;
+  display: inline-block;
+}
+
+/* 
+@media screen (max-width: 600px) {
+  .container {
+    height: 100dvh;
+    width: 100dvw;
+  }
+} */
