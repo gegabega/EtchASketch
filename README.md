@@ -12,3 +12,8 @@ App Features:
 - **Draw using Hover or Click&Hold** (or best: _both_)
 - Download your image
 - _Refresh between downloads_
+
+ # _When to use_
+- On MS paint nostalgia
+- When you want to draw your default github profile pic but make it cooler
+
